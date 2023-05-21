@@ -3,6 +3,7 @@ import telegram
 import asyncio
 import csv
 import os
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from string_extensions import transform_to_search_text
 from AdInfo import AdInfo, ad_info_factory
@@ -10,8 +11,9 @@ from AdInfo import AdInfo, ad_info_factory
 SEARCH_TEXT = 'mario odyssey'
 
 # Set up Telegram bot
-bot_token = '5843642555:AAGBMXYbG5YDCwaRJjDiXPTVDUiG0bTOjqU'
-chat_id = '1464547242'
+load_dotenv()
+bot_token = os.getenv('BOT_TOKEN')
+chat_id = os.getenv('CHAT_ID')
 
 # Construct the path to the .csv file
 script_dir = os.path.dirname(os.path.abspath(__file__))
