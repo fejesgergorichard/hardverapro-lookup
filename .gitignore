@@ -5,4 +5,3 @@ venv/
 .idea/
 ad_database.csv
 .env
-/.env
